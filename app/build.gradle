@@ -1,8 +1,6 @@
-plugins {
+        plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    
-    
 }
 
 def localProperties = new Properties()
@@ -70,9 +68,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            firebaseCrashlytics {
-                nativeSymbolUploadEnabled true
-            }
             ndk {
                 debugSymbolLevel 'FULL'
             }
@@ -81,9 +76,6 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            firebaseCrashlytics {
-                nativeSymbolUploadEnabled true
-            }
             ndk {
                 debugSymbolLevel 'FULL'
             }
@@ -93,10 +85,6 @@ android {
             initWith release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            firebaseCrashlytics {
-                mappingFileUploadEnabled false
-                nativeSymbolUploadEnabled true
-            }
             resValue "string", "app_name", "LeviLauncher Beta"
             buildConfigField "boolean", "IS_BETA", "true"
             matchingFallbacks = ["release"]
